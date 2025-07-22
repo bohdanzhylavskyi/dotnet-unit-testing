@@ -19,17 +19,20 @@
 
         public static string Sum(string num1Str, string num2Str)
         {
-            if (TryParseNatualNumberStr(num1Str, out int num1) && TryParseNatualNumberStr(num2Str, out int num2))
-            {
-                return (num1 + num2).ToString();
-            }
+            int num1 = TryParseNaturalNumberStr(num1Str) ?? 0;
+            int num2 = TryParseNaturalNumberStr(num2Str) ?? 0;
 
-            return "0";
+            return (num1 + num2).ToString();
         }
 
-        private static bool TryParseNatualNumberStr(string input, out int naturalNumber)
+        private static int? TryParseNaturalNumberStr(string input)
         {
-            return int.TryParse(input, out naturalNumber) && naturalNumber >= 0;
+            if (int.TryParse(input, out int intNumber) && intNumber >= 0)
+            {
+                return intNumber;
+            }
+
+            return null;
         }
     }
 }
