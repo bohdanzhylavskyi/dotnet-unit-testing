@@ -14,5 +14,17 @@ namespace Utils.Tests
 
             Assert.True(actualResult, $"'{year}' is a typical leap year");
         }
+
+        [Theory]
+        [InlineData(2019)]
+        [InlineData(2021)]
+        [InlineData(2023)]
+        [InlineData(2025)]
+        public void IsLeapYear_TypicalCommonYears_ReturnsFalse(int year)
+        {
+            var actualResult = Utils.IsLeapYear(year);
+
+            Assert.False(actualResult, $"'{year}' is a common year");
+        }
     }
 }
