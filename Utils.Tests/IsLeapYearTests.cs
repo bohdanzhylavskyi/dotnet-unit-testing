@@ -26,5 +26,17 @@ namespace Utils.Tests
 
             Assert.False(actualResult, $"'{year}' is a common year");
         }
+
+        [Theory]
+        [InlineData(1700)]
+        [InlineData(1800)]
+        [InlineData(1900)]
+        [InlineData(2100)]
+        public void IsLeapYear_AtypicalCommonYears_ReturnsFalse(int year)
+        {
+            var actualResult = Utils.IsLeapYear(year);
+
+            Assert.False(actualResult, $"'{year}' is an atypical common year");
+        }
     }
 }
