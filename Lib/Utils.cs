@@ -16,5 +16,10 @@
 
             return true;
         }
+
+        public static string Sum(string num1, string num2)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
