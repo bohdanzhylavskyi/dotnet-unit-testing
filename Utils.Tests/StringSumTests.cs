@@ -9,5 +9,15 @@ namespace Utils.Tests
 
             Assert.Equal("0", actualResult);
         }
+
+        [Theory]
+        [InlineData("10", "4", "14")]
+        [InlineData("5", "50", "55")]
+        public void Sum_NaturalNums_ReturnsCorrectSum(string num1, string num2, string expectedSum)
+        {
+            var actualResult = Utils.Sum(num1, num2);
+
+            Assert.Equal(expectedSum, actualResult);
+        }
     }
 }
