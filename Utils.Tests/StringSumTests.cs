@@ -13,6 +13,7 @@ namespace Utils.Tests
         [Theory]
         [InlineData("10", "4", "14")]
         [InlineData("5", "50", "55")]
+        [InlineData("0", "50", "50")]
         public void Sum_NaturalNums_ReturnsCorrectSum(string num1, string num2, string expectedSum)
         {
             var actualResult = Utils.Sum(num1, num2);
