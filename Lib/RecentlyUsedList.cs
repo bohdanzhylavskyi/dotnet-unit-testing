@@ -26,6 +26,12 @@ namespace Utils
             }
 
             this.storage.AddFirst(item);
+
+            if (size != null && this.storage.Count > size)
+            {
+                var overflowedNode = this.storage.ElementAt(size.Value);
+                this.storage.Remove(overflowedNode);
+            }
         }
 
         public string this[int i]
