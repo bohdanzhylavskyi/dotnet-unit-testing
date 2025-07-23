@@ -2,16 +2,18 @@
 {
     public class RecentlyUsedList
     {
+        private LinkedList<string> storage = new LinkedList<string>();
+
         public void Add(string item)
         {
-            throw new NotImplementedException();
+            this.storage.AddFirst(item);
         }
 
         public string this[int i]
         {
-            get => throw new NotImplementedException();
+            get => this.storage.ElementAt(i);
         }
 
-        public int Length => throw new NotImplementedException();
+        public int Length => this.storage.Count;
     }
 }
