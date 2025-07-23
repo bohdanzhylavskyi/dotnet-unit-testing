@@ -6,6 +6,13 @@
 
         public void Add(string item)
         {
+            var listNodeWithIdenticalValue = this.storage.Find(item);
+
+            if (listNodeWithIdenticalValue != null)
+            {
+                this.storage.Remove(listNodeWithIdenticalValue);
+            }
+
             this.storage.AddFirst(item);
         }
 
