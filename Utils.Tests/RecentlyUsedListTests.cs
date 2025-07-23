@@ -3,7 +3,7 @@
     public class RecentlyUsedListTests
     {
         [Fact]
-        public void RecentlyUsedList_AddSingleItem_ProcessedCorrectly()
+        public void Add_SingleItem_ProcessedCorrectly()
         {
             var list = new RecentlyUsedList();
             var item = "item";
@@ -15,7 +15,7 @@
         }
 
         [Fact]
-        public void RecentlyUsedList_AddMultipleItems_ProcessedCorrectly()
+        public void Add_MultipleItems_ProcessedCorrectly()
         {
             var list = new RecentlyUsedList();
             var item1 = "item 1";
@@ -30,7 +30,7 @@
         }
 
         [Fact]
-        public void RecentlyUsedList_AddDuplicates_ListContainsOnlyUniqueItems()
+        public void Add_Duplicates_ListContainsOnlyUniqueItems()
         {
             var list = new RecentlyUsedList();
             var item = "item";
@@ -43,7 +43,7 @@
         }
 
         [Fact]
-        public void RecentlyUsedList_AddDuplicates_DuplicatedItemMovedRatherThanAdded()
+        public void Add_Duplicates_DuplicatedItemMovedRatherThanAdded()
         {
             var list = new RecentlyUsedList();
             var item1 = "item 1";
@@ -59,7 +59,7 @@
         }
 
         [Fact]
-        public void RecentlyUsedList_AddMoreItemsThanMaxSize_OverflowedItemsDropped()
+        public void Add_MoreItemsThanMaxSize_OverflowedItemsDropped()
         {
             var size = 3;
             var list = new RecentlyUsedList(size);

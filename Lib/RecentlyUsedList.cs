@@ -29,7 +29,7 @@ namespace Utils
 
             if (size != null && this.storage.Count > size)
             {
-                var overflowedNode = this.storage.ElementAt(size.Value);
+                var overflowedNode = this.storage.Last();
                 this.storage.Remove(overflowedNode);
             }
         }
