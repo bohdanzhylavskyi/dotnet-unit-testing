@@ -1,8 +1,20 @@
-﻿namespace Utils
+﻿using System.Linq;
+
+namespace Utils
 {
     public class RecentlyUsedList
     {
         private LinkedList<string> storage = new LinkedList<string>();
+        private int? size = null;
+
+        public RecentlyUsedList()
+        {
+        }
+
+        public RecentlyUsedList(int size)
+        {
+            this.size = size;
+        }
 
         public void Add(string item)
         {

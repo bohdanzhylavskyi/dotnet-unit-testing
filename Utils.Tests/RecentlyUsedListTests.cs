@@ -57,5 +57,27 @@
             Assert.Equal(list[0], item1);
             Assert.Equal(list[1], item2);
         }
+
+        [Fact]
+        public void RecentlyUsedList_AddMoreItemsThanMaxSize_OverflowedItemsDropped()
+        {
+            var size = 3;
+            var list = new RecentlyUsedList(size);
+
+            var item1 = "item 1";
+            var item2 = "item 2";
+            var item3 = "item 3";
+            var item4 = "item 4";
+
+            list.Add(item1);
+            list.Add(item2);
+            list.Add(item3);
+            list.Add(item4);
+
+            Assert.Equal(3, list.Length);
+            Assert.Equal(list[0], item4);
+            Assert.Equal(list[1], item3);
+            Assert.Equal(list[2], item2);
+        }
     }
 }
