@@ -1,6 +1,6 @@
 namespace Utils.Tests
 {
-    public class IsLeapYearTests
+    public class LeapYearCheckerTests
     {
         [Theory]
         [InlineData(424)]
@@ -10,7 +10,7 @@ namespace Utils.Tests
         [InlineData(2020)]
         public void IsLeapYear_TypicalLeapYears_ReturnsTrue(int year)
         {
-            var actualResult = Utils.IsLeapYear(year);
+            var actualResult = LeapYearChecker.IsLeapYear(year);
 
             Assert.True(actualResult, $"'{year}' is a typical leap year");
         }
@@ -22,7 +22,7 @@ namespace Utils.Tests
         [InlineData(2025)]
         public void IsLeapYear_TypicalCommonYears_ReturnsFalse(int year)
         {
-            var actualResult = Utils.IsLeapYear(year);
+            var actualResult = LeapYearChecker.IsLeapYear(year);
 
             Assert.False(actualResult, $"'{year}' is a common year");
         }
@@ -34,7 +34,7 @@ namespace Utils.Tests
         [InlineData(2100)]
         public void IsLeapYear_AtypicalCommonYears_ReturnsFalse(int year)
         {
-            var actualResult = Utils.IsLeapYear(year);
+            var actualResult = LeapYearChecker.IsLeapYear(year);
 
             Assert.False(actualResult, $"'{year}' is an atypical common year");
         }
@@ -45,7 +45,7 @@ namespace Utils.Tests
         [InlineData(2400)]
         public void IsLeapYear_AtypicalLeapYears_ReturnsTrue(int year)
         {
-            var actualResult = Utils.IsLeapYear(year);
+            var actualResult = LeapYearChecker.IsLeapYear(year);
 
             Assert.True(actualResult, $"'{year}' is an atypical leap year");
         }

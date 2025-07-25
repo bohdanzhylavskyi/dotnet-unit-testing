@@ -1,22 +1,7 @@
 ﻿namespace Utils
 {
-    public static class Utils
+    public class StringSumUtility
     {
-        public static bool IsLeapYear(int year)
-        {
-            if (year % 4 != 0)
-            {
-                return false;
-            }
-
-            if (year % 100 == 0 && year % 400 != 0)
-            {
-                return false;
-            }
-
-            return true;
-        }
-
         public static string Sum(string num1Str, string num2Str)
         {
             int num1 = TryParseNaturalNumberStr(num1Str) ?? 0;

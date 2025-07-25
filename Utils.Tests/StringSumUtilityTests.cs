@@ -1,11 +1,11 @@
 namespace Utils.Tests
 {
-    public class StringSumTests
+    public class StringSumUtilityTests
     {
         [Fact]
         public void Sum_EmptyStringNums_ReturnsZeroStr()
         {
-            var actualResult = Utils.Sum("","");
+            var actualResult = StringSumUtility.Sum("","");
 
             Assert.Equal("0", actualResult);
         }
@@ -16,7 +16,7 @@ namespace Utils.Tests
         [InlineData("0", "50", "50")]
         public void Sum_NaturalNums_ReturnsCorrectSum(string num1, string num2, string expectedSum)
         {
-            var actualResult = Utils.Sum(num1, num2);
+            var actualResult = StringSumUtility.Sum(num1, num2);
 
             Assert.Equal(expectedSum, actualResult);
         }
@@ -29,7 +29,7 @@ namespace Utils.Tests
         [InlineData("", "30", "30")]
         public void Sum_OneOrBothOperandsAreNonNatural_ReturnsCorrectSum(string num1, string num2, string expectedSum)
         {
-            var actualResult = Utils.Sum(num1, num2);
+            var actualResult = StringSumUtility.Sum(num1, num2);
 
             Assert.Equal(expectedSum, actualResult);
         }
